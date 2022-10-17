@@ -1,0 +1,23 @@
+.flex {
+    display: flex;
+}
+
+ul > * {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    list-style: none;
+}
+
+.flex-justify {
+    justify-content: space-around;
+}
+
+.center {
+    margin: 0 auto;
+}
+
+nav {
+    max-width: 1200px;
+    font-size: 24px;
+}
