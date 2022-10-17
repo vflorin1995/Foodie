@@ -356,8 +356,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".footer-area {\r\n  border: 1px solid black;\r\n}\r\n", ""]);
-___CSS_LOADER_EXPORT___.push([module.id, ".flex {\n    display: flex;\n}\n\nul > * {\n    margin: 0;\n    padding: 0;\n    cursor: pointer;\n    list-style: none;\n}\n\n.flex-justify {\n    justify-content: space-around;\n}\n\n.center {\n    margin: 0 auto;\n}\n\nnav {\n    max-width: 1200px;\n    font-size: 24px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  max-width: 1200px;\n  margin: 0 auto;\n}\n\n.flex {\n  display: flex;\n}\n\nul > * {\n  margin: 0;\n  padding: 0;\n  cursor: pointer;\n  list-style: none;\n}\n\n.flex-justify {\n  justify-content: space-around;\n}\n\nnav {\n  font-size: 24px;\n}\n\n.footer-area {\n  border: 2px solid black;\n  position: fixed;\n  bottom: 0;\n  width: calc(100% - 4px);\n  text-align: center;\n  max-width: 1200px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
