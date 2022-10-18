@@ -23,6 +23,7 @@ fetch(url)
 
       const commentBtn = document.createElement('button');
       commentBtn.innerText = 'Comment';
+      commentBtn.id = 'comment-button';
 
       const reservationBtn = document.createElement('button');
       reservationBtn.innerText = 'Reservation';

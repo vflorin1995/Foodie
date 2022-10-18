@@ -10,7 +10,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=e';
-let section = document.querySelector('.items');
+const section = document.querySelector('.items');
 
 fetch(url)
   .then((response) => response.json())
@@ -18,25 +18,25 @@ fetch(url)
     data = data.meals;
     console.log(data);
     data.forEach((item) => {
-        let container = document.createElement('div');
-        container.classList = 'container';
+      const container = document.createElement('div');
+      container.classList = 'container';
 
-        let image = document.createElement('img');
-        image.classList = 'picture';
-        image.src = _food_png__WEBPACK_IMPORTED_MODULE_1__;
+      const image = document.createElement('img');
+      image.classList = 'picture';
+      image.src = _food_png__WEBPACK_IMPORTED_MODULE_1__;
 
-        let title = document.createElement('div');
-        title.innerText = item.strMeal;
-        title.classList = 'title';
+      const title = document.createElement('div');
+      title.innerText = item.strMeal;
+      title.classList = 'title';
 
-        let commentBtn = document.createElement('button');
-        commentBtn.innerText = 'Comment';
+      const commentBtn = document.createElement('button');
+      commentBtn.innerText = 'Comment';
 
-        let reservationBtn = document.createElement('button');
-        reservationBtn.innerText = 'Reservation';
+      const reservationBtn = document.createElement('button');
+      reservationBtn.innerText = 'Reservation';
 
-        container.append(image, title, commentBtn, reservationBtn);
-        section.append(container);
+      container.append(image, title, commentBtn, reservationBtn);
+      section.append(container);
     });
   });
 
@@ -389,7 +389,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  max-width: 1200px;\n  margin: 0 auto;\n}\n\n.flex {\n  display: flex;\n}\n\nul {\n  padding: 0;\n  margin-bottom: 50px;\n}\n\nul > * {\n  margin: 0;\n  padding: 0;\n  cursor: pointer;\n  list-style: none;\n}\n\n.flex-justify {\n  justify-content: space-around;\n}\n\nnav {\n  font-size: 24px;\n}\n\nfooter {\n  border: 2px solid black;\n  text-align: center;\n  max-width: 1200px;\n  margin: 24px;\n  padding: 6px 16px;\n  line-height: 1.5;\n}\n\n.items {\n  margin: 24px;\n  display: grid;\n  grid-template-columns: 1fr;\n}\n\n.picture {\n  max-width: 80vw;\n}\n\n.container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-top: 36px;\n}\n\n.title {\n  font-size: 24px;\n  padding: 12px;\n}\n\nbutton {\n  padding: 6px;\n  margin: 6px;\n}\n\n@media only screen and (min-width: 768px){\n  .items {\n    grid-template-columns: 1fr 1fr 1fr;\n    gap: 20px;\n  }\n\n  .picture {\n    max-width: 25vw;\n  }\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  max-width: 1200px;\r\n  margin: 0 auto;\r\n}\r\n\r\n.flex {\r\n  display: flex;\r\n}\r\n\r\nul {\r\n  padding: 0;\r\n  margin-bottom: 50px;\r\n}\r\n\r\nul > * {\r\n  margin: 0;\r\n  padding: 0;\r\n  cursor: pointer;\r\n  list-style: none;\r\n}\r\n\r\n.flex-justify {\r\n  justify-content: space-around;\r\n}\r\n\r\nnav {\r\n  font-size: 24px;\r\n}\r\n\r\nfooter {\r\n  border: 2px solid black;\r\n  text-align: center;\r\n  max-width: 1200px;\r\n  margin: 24px;\r\n  padding: 6px 16px;\r\n  line-height: 1.5;\r\n}\r\n\r\n.items {\r\n  margin: 24px;\r\n  display: grid;\r\n  grid-template-columns: 1fr;\r\n}\r\n\r\n.picture {\r\n  max-width: 80vw;\r\n}\r\n\r\n.container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  margin-top: 36px;\r\n}\r\n\r\n.title {\r\n  font-size: 24px;\r\n  padding: 12px;\r\n}\r\n\r\nbutton {\r\n  padding: 6px;\r\n  margin: 6px;\r\n}\r\n\r\n@media only screen and (min-width: 768px) {\r\n  .items {\r\n    grid-template-columns: 1fr 1fr 1fr;\r\n    gap: 20px;\r\n  }\r\n\r\n  .picture {\r\n    width: 25vw;\r\n  }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
