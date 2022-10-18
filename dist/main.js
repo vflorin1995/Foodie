@@ -10,7 +10,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=e';
-let section = document.querySelector('.items');
+const url2 = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/wIvcfoeCMowsKdAOdXJy/likes/';
+const section = document.querySelector('.items');
 
 fetch(url)
   .then((response) => response.json())
@@ -18,27 +19,47 @@ fetch(url)
     data = data.meals;
     console.log(data);
     data.forEach((item) => {
-        let container = document.createElement('div');
-        container.classList = 'container';
+      const container = document.createElement('div');
+      container.classList = 'container';
 
-        let image = document.createElement('img');
-        image.classList = 'picture';
-        image.src = _food_png__WEBPACK_IMPORTED_MODULE_1__;
+      const id = document.createElement('p');
+      id.innerText = item.idMeal;
+      id.classList = 'displayNone';
 
-        let title = document.createElement('div');
-        title.innerText = item.strMeal;
-        title.classList = 'title';
+      const image = document.createElement('img');
+      image.classList = 'picture';
+      image.src = _food_png__WEBPACK_IMPORTED_MODULE_1__;
 
-        let commentBtn = document.createElement('button');
-        commentBtn.innerText = 'Comment';
+      const title = document.createElement('div');
+      title.innerText = item.strMeal;
+      title.classList = 'title';
 
-        let reservationBtn = document.createElement('button');
-        reservationBtn.innerText = 'Reservation';
+      const commentBtn = document.createElement('button');
+      commentBtn.innerText = 'Comment';
 
-        container.append(image, title, commentBtn, reservationBtn);
-        section.append(container);
+      const reservationBtn = document.createElement('button');
+      reservationBtn.innerText = 'Reservation';
+
+      container.append(image, title, id, commentBtn, reservationBtn);
+      section.append(container);
     });
-  });
+  })
+  .then(fetch(url2)
+    .then((response) => response.json())
+    .then((data) => {
+      const ids = document.querySelectorAll('.displayNone');
+      data.forEach((element) => {
+        ids.forEach((id) => {
+          if ((element.item_id) === Number((id.innerText))) {
+            const likeCnt = document.createElement('div');
+            likeCnt.innerText = `${element.likes} likes`;
+            likeCnt.className = 'likes';
+            const x = id.parentElement;
+            x.insertBefore(likeCnt, id);
+          }
+        });
+      });
+    }));
 
 /***/ }),
 /* 1 */
@@ -389,7 +410,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  max-width: 1200px;\n  margin: 0 auto;\n}\n\n.flex {\n  display: flex;\n}\n\nul {\n  padding: 0;\n  margin-bottom: 50px;\n}\n\nul > * {\n  margin: 0;\n  padding: 0;\n  cursor: pointer;\n  list-style: none;\n}\n\n.flex-justify {\n  justify-content: space-around;\n}\n\nnav {\n  font-size: 24px;\n}\n\nfooter {\n  border: 2px solid black;\n  text-align: center;\n  max-width: 1200px;\n  margin: 24px;\n  padding: 6px 16px;\n  line-height: 1.5;\n}\n\n.items {\n  margin: 24px;\n  display: grid;\n  grid-template-columns: 1fr;\n}\n\n.picture {\n  max-width: 80vw;\n}\n\n.container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-top: 36px;\n}\n\n.title {\n  font-size: 24px;\n  padding: 12px;\n}\n\nbutton {\n  padding: 6px;\n  margin: 6px;\n}\n\n@media only screen and (min-width: 768px){\n  .items {\n    grid-template-columns: 1fr 1fr 1fr;\n    gap: 20px;\n  }\n\n  .picture {\n    max-width: 25vw;\n  }\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  max-width: 1200px;\n  margin: 0 auto;\n}\n\n.flex {\n  display: flex;\n}\n\nul {\n  padding: 0;\n  margin-bottom: 50px;\n}\n\nul > * {\n  margin: 0;\n  padding: 0;\n  cursor: pointer;\n  list-style: none;\n}\n\n.flex-justify {\n  justify-content: space-around;\n}\n\nnav {\n  font-size: 24px;\n}\n\nfooter {\n  border: 2px solid black;\n  text-align: center;\n  max-width: 1200px;\n  margin: 24px;\n  padding: 6px 16px;\n  line-height: 1.5;\n}\n\n.items {\n  margin: 24px;\n  display: grid;\n  grid-template-columns: 1fr;\n}\n\n.picture {\n  max-width: 80vw;\n}\n\n.container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-top: 36px;\n}\n\n.title {\n  font-size: 24px;\n  padding: 12px;\n}\n\nbutton {\n  padding: 6px;\n  margin: 6px;\n}\n\n.displayNone {\n  display: none;\n}\n\n.likes {\n  font-size: 16px;\n  color: gray;\n}\n\n@media only screen and (min-width: 768px) {\n  .items {\n    grid-template-columns: 1fr 1fr 1fr;\n    gap: 20px;\n  }\n\n  .picture {\n    width: 25vw;\n  }\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
