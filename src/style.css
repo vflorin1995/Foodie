@@ -63,6 +63,15 @@ button {
   margin: 6px;
 }
 
+.displayNone {
+  display: none;
+}
+
+.likes {
+  font-size: 16px;
+  color: gray;
+}
+
 @media only screen and (min-width: 768px) {
   .items {
     grid-template-columns: 1fr 1fr 1fr;
