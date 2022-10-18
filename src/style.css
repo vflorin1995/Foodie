@@ -63,13 +63,13 @@ button {
   margin: 6px;
 }
 
-@media only screen and (min-width: 768px){
+@media only screen and (min-width: 768px) {
   .items {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
   }
 
   .picture {
-    max-width: 25vw;
+    width: 25vw;
   }
 }
