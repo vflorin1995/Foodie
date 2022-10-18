@@ -7,6 +7,11 @@ body {
   display: flex;
 }
 
+ul {
+  padding: 0;
+  margin-bottom: 50px;
+}
+
 ul > * {
   margin: 0;
   padding: 0;
@@ -22,11 +27,49 @@ nav {
   font-size: 24px;
 }
 
-.footer-area {
+footer {
   border: 2px solid black;
-  position: fixed;
-  bottom: 0;
-  width: calc(100% - 4px);
   text-align: center;
   max-width: 1200px;
+  margin: 24px;
+  padding: 6px 16px;
+  line-height: 1.5;
+}
+
+.items {
+  margin: 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.picture {
+  max-width: 80vw;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 36px;
+}
+
+.title {
+  font-size: 24px;
+  padding: 12px;
+}
+
+button {
+  padding: 6px;
+  margin: 6px;
+}
+
+@media only screen and (min-width: 768px) {
+  .items {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+
+  .picture {
+    width: 25vw;
+  }
 }
