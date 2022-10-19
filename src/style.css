@@ -72,6 +72,10 @@ button {
   color: gray;
 }
 
+.box {
+  align-items: center;
+}
+
 @media only screen and (min-width: 768px) {
   .items {
     grid-template-columns: 1fr 1fr 1fr;
