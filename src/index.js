@@ -1,5 +1,5 @@
 import './style.css';
-import picture from './food.png';
+import counter from './Modules/counter.js';
 import popupWindow from './Modules/commPopup.js';
 
 const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=e';
@@ -42,7 +42,7 @@ fetch(url)
 
       const image = document.createElement('img');
       image.classList = 'picture';
-      image.src = picture;
+      image.src = item.strMealThumb;
 
       const title = document.createElement('div');
       title.innerText = item.strMeal;
@@ -94,5 +94,9 @@ fetch(url)
         item.innerHTML = '<i class="fa-solid fa-heart"></i>';
       }, { once: true });
     });
+
+    const containers = Array.from(document.querySelectorAll('.container'));
+    const meals = document.querySelector('.meals');
+    meals.innerText = `${counter(containers)} Meals`;
   })
   .then(getData());
