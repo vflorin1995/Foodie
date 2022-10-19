@@ -31,7 +31,6 @@ fetch(url)
   .then((response) => response.json())
   .then((data) => {
     data = data.meals;
-    console.log(data);
     data.forEach((item) => {
       const container = document.createElement('div');
       container.classList = 'container';
