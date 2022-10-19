@@ -1,17 +1,18 @@
 import './commPopup.css';
+
 const overlay = document.getElementById('overlay');
 
 const getData = async (IdMeal) => {
-  const url = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + IdMeal;
+  const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${IdMeal}`;
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
       data = data.meals;
-        console.log(data[0].strCategory);
-       const div =  `<div class="popup-container" id="popup">
+      console.log(data[0].strCategory);
+      const div = `<div class="popup-container" id="popup">
       <div class="popup-holder">
           <div class="close-popup">
-          <i id="close-" href="#" class="fa-solid fa-close fa-2x close-popup"></i>
+          <i id="close" href="#" class="fa-solid fa-close fa-2x close-popup"></i>
           </div>
           <div class="meal-image">
           <img src="${data[0].strMealThumb}" alt="food image" class="">
@@ -34,27 +35,22 @@ const getData = async (IdMeal) => {
       </div>
       </div>`;
       overlay.innerHTML = div;
+
+      const closeButton = document.getElementById('close');
+      console.log(closeButton);
+      closeButton.addEventListener('click', () => {
+        if (overlay.style.display !== 'none') {
+          overlay.style.display = 'none';
+        }
+      });
     });
 };
 
-
-
-const PopupWindowOn = (id) =>  {
+const PopupWindowOn = (id) => {
   if (overlay.style.display !== 'block') {
     overlay.style.display = 'block';
-     getData(id);
+    getData(id);
   }
 };
 
-setTimeout(() => {
-  const closeButton = document.getElementById('close');
-  console.log(closeButton);
-closeButton.addEventListener('click', (e) => {
-  e.defaultPrevented();
-  if (overlay.style.display !== 'none') {
-    overlay.style.display = 'none';
-  }
-});
-}, 2000);
-
-export default  PopupWindowOn;
+export default PopupWindowOn;

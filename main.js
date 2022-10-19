@@ -1,4 +1,3 @@
-
 //  Select the body to append modal to it and to blur it
 const body = document.querySelector('.body-blur');
 

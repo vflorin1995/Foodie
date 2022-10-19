@@ -10,7 +10,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const overlay = document.getElementById('overlay');
 
 const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=e';
 const section = document.querySelector('.items');
@@ -43,18 +42,14 @@ fetch(url)
       container.append(image, title, commentBtn, reservationBtn);
       section.append(container);
     });
-  });
 
-  // Calling Comment Popup here
-  setTimeout(() => {
     const comButton = Array.from(document.querySelectorAll('.commButton'));
     comButton.forEach((btn) => {
       btn.addEventListener('click', () => {
         (0,_Modules_commPopup_js__WEBPACK_IMPORTED_MODULE_2__["default"])(btn.id);
       });
+    });
   });
-  }, 5000);
-
 
 /***/ }),
 /* 1 */
@@ -405,7 +400,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  max-width: 1200px;\r\n  margin: 0 auto;\r\n}\r\n\r\n.flex {\r\n  display: flex;\r\n}\r\n\r\nul {\r\n  padding: 0;\r\n  margin-bottom: 50px;\r\n}\r\n\r\nul > * {\r\n  margin: 0;\r\n  padding: 0;\r\n  cursor: pointer;\r\n  list-style: none;\r\n}\r\n\r\n.flex-justify {\r\n  justify-content: space-around;\r\n}\r\n\r\nnav {\r\n  font-size: 24px;\r\n}\r\n\r\nfooter {\r\n  border: 2px solid black;\r\n  text-align: center;\r\n  max-width: 1200px;\r\n  margin: 24px;\r\n  padding: 6px 16px;\r\n  line-height: 1.5;\r\n}\r\n\r\n.items {\r\n  margin: 24px;\r\n  display: grid;\r\n  grid-template-columns: 1fr;\r\n}\r\n\r\n.picture {\r\n  max-width: 80vw;\r\n}\r\n\r\n.container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  margin-top: 36px;\r\n}\r\n\r\n.title {\r\n  font-size: 24px;\r\n  padding: 12px;\r\n}\r\n\r\nbutton {\r\n  padding: 6px;\r\n  margin: 6px;\r\n}\r\n\r\n@media only screen and (min-width: 768px) {\r\n  .items {\r\n    grid-template-columns: 1fr 1fr 1fr;\r\n    gap: 20px;\r\n  }\r\n\r\n  .picture {\r\n    width: 25vw;\r\n  }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  max-width: 1200px;\n  margin: 0 auto;\n}\n\n.flex {\n  display: flex;\n}\n\nul {\n  padding: 0;\n  margin-bottom: 50px;\n}\n\nul > * {\n  margin: 0;\n  padding: 0;\n  cursor: pointer;\n  list-style: none;\n}\n\n.flex-justify {\n  justify-content: space-around;\n}\n\nnav {\n  font-size: 24px;\n}\n\nfooter {\n  border: 2px solid black;\n  text-align: center;\n  max-width: 1200px;\n  margin: 24px;\n  padding: 6px 16px;\n  line-height: 1.5;\n}\n\n.items {\n  margin: 24px;\n  display: grid;\n  grid-template-columns: 1fr;\n}\n\n.picture {\n  max-width: 80vw;\n}\n\n.container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-top: 36px;\n}\n\n.title {\n  font-size: 24px;\n  padding: 12px;\n}\n\nbutton {\n  padding: 6px;\n  margin: 6px;\n}\n\n@media only screen and (min-width: 768px) {\n  .items {\n    grid-template-columns: 1fr 1fr 1fr;\n    gap: 20px;\n  }\n\n  .picture {\n    width: 25vw;\n  }\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -543,19 +538,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _commPopup_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(13);
 
+
 const overlay = document.getElementById('overlay');
 
 const getData = async (IdMeal) => {
-  const url = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + IdMeal;
+  const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${IdMeal}`;
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
       data = data.meals;
-        console.log(data[0].strCategory);
-       const div =  `<div class="popup-container" id="popup">
+      console.log(data[0].strCategory);
+      const div = `<div class="popup-container" id="popup">
       <div class="popup-holder">
           <div class="close-popup">
-          <i id="close-" href="#" class="fa-solid fa-close fa-2x close-popup"></i>
+          <i id="close" href="#" class="fa-solid fa-close fa-2x close-popup"></i>
           </div>
           <div class="meal-image">
           <img src="${data[0].strMealThumb}" alt="food image" class="">
@@ -578,28 +574,23 @@ const getData = async (IdMeal) => {
       </div>
       </div>`;
       overlay.innerHTML = div;
+
+      const closeButton = document.getElementById('close');
+      console.log(closeButton);
+      closeButton.addEventListener('click', () => {
+        if (overlay.style.display !== 'none') {
+          overlay.style.display = 'none';
+        }
+      });
     });
 };
 
-
-
-const PopupWindowOn = (id) =>  {
+const PopupWindowOn = (id) => {
   if (overlay.style.display !== 'block') {
     overlay.style.display = 'block';
-     getData(id);
+    getData(id);
   }
 };
-
-setTimeout(() => {
-  const closeButton = document.getElementById('close');
-  console.log(closeButton);
-closeButton.addEventListener('click', (e) => {
-  e.defaultPrevented();
-  if (overlay.style.display !== 'none') {
-    overlay.style.display = 'none';
-  }
-});
-}, 2000);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PopupWindowOn);
 
@@ -670,7 +661,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#overlay {\r\n  position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background-color: #fffdfd;\r\n  background-color: rgba(255, 255, 255, 0.807);\r\n  z-index: 100000;\r\n  display: none;\r\n}\r\n\r\n.popup-body {\r\n  display: flex;\r\n  align-items: center;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n}\r\n\r\n#popup {\r\n  border: 2px solid black;\r\n  padding: 0 24px 24px;\r\n  width: 70%;\r\n  margin: 0 auto;\r\n  height: 80%;\r\n  background-color: rgb(0, 0, 0);\r\n  background-color: rgba(255, 255, 255, 0.16);\r\n  z-index: 100000;\r\n  position: fixed;\r\n  top: 10px;\r\n  left: 20px;\r\n  right: 20px;\r\n  bottom: 20px;\r\n  overflow-y: scroll;\r\n}\r\n\r\n.popup-holder {\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.meal-image {\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n\r\n.meal-image > img {\r\n  width: 42vw;\r\n  height: 32vw;\r\n}\r\n\r\n.meal-name {\r\n  text-align: center;\r\n  font-size: 8vw;\r\n}\r\n\r\n.meal-desc {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: flex-start;\r\n}\r\n\r\n.meal-desc-ul > li {\r\n  padding: 10px;\r\n  font-size: 18px;\r\n  flex-wrap: wrap;\r\n}\r\n\r\n.meal-desc-right > ul {\r\n  margin-top: 0;\r\n}\r\n\r\n.meal-desc-left > ul {\r\n  margin-bottom: 0;\r\n}\r\n\r\n.close-popup {\r\n  color: rgb(5, 5, 5);\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: flex-end;\r\n  right: 10%;\r\n}\r\n\r\n/* Desktop width > 768px */\r\n@media (min-width: 768px) {\r\n  .meal-image > img {\r\n    width: 36vw;\r\n    height: 28vw;\r\n  }\r\n\r\n  .meal-name {\r\n    text-align: center;\r\n    font-size: 2.5vw;\r\n  }\r\n\r\n  .meal-desc {\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n  }\r\n\r\n  .meal-desc-ul > li {\r\n    padding: 10px;\r\n    font-size: 18px;\r\n    word-wrap: break-word;\r\n  }\r\n\r\n  .meal-desc-left > ul {\r\n    margin-top: 0;\r\n  }\r\n\r\n  .meal-desc-right > ul {\r\n    margin-top: 0;\r\n  }\r\n\r\n\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "#overlay {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: #fffdfd;\n  background-color: rgba(255, 255, 255, 0.807);\n  z-index: 100000;\n  display: none;\n}\n\n.popup-body {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  justify-content: center;\n}\n\n#popup {\n  border: 2px solid black;\n  padding: 0 24px 24px;\n  width: 70%;\n  margin: 0 auto;\n  height: 80%;\n  background-color: rgb(0, 0, 0);\n  background-color: rgba(255, 255, 255, 0.16);\n  z-index: 100000;\n  position: fixed;\n  top: 10px;\n  left: 20px;\n  right: 20px;\n  bottom: 20px;\n  overflow-y: scroll;\n}\n\n.popup-holder {\n  display: flex;\n  flex-direction: column;\n}\n\n.meal-image {\n  display: flex;\n  justify-content: center;\n}\n\n.meal-image > img {\n  width: 42vw;\n  height: 32vw;\n}\n\n.meal-name {\n  text-align: center;\n  font-size: 8vw;\n}\n\n.meal-desc {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n}\n\n.meal-desc-ul > li {\n  padding: 10px;\n  font-size: 18px;\n  flex-wrap: wrap;\n}\n\n.meal-desc-right > ul {\n  margin-top: 0;\n}\n\n.meal-desc-left > ul {\n  margin-bottom: 0;\n}\n\n.close-popup {\n  color: rgb(5, 5, 5);\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n  right: 10%;\n}\n\n/* Desktop width > 768px */\n@media (min-width: 768px) {\n  .meal-image > img {\n    width: 36vw;\n    height: 28vw;\n  }\n\n  .meal-name {\n    text-align: center;\n    font-size: 2.5vw;\n  }\n\n  .meal-desc {\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n  }\n\n  .meal-desc-ul > li {\n    padding: 10px;\n    font-size: 18px;\n    word-wrap: break-word;\n  }\n\n  .meal-desc-left > ul {\n    margin-top: 0;\n  }\n\n  .meal-desc-right > ul {\n    margin-top: 0;\n  }\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
