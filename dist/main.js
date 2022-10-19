@@ -5,7 +5,7 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _food_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
+/* harmony import */ var _Modules_counter_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
 /* harmony import */ var _Modules_commPopup_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12);
 
 
@@ -51,7 +51,7 @@ fetch(url)
 
       const image = document.createElement('img');
       image.classList = 'picture';
-      image.src = _food_png__WEBPACK_IMPORTED_MODULE_1__;
+      image.src = item.strMealThumb;
 
       const title = document.createElement('div');
       title.innerText = item.strMeal;
@@ -103,6 +103,10 @@ fetch(url)
         item.innerHTML = '<i class="fa-solid fa-heart"></i>';
       }, { once: true });
     });
+
+    const containers = Array.from(document.querySelectorAll('.container'));
+    const meals = document.querySelector('.meals');
+    meals.innerText = `${(0,_Modules_counter_js__WEBPACK_IMPORTED_MODULE_1__["default"])(containers)} Meals`;
   })
   .then(getData());
 
@@ -580,9 +584,15 @@ module.exports = function (cssWithMappingToString) {
 
 /***/ }),
 /* 11 */
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "93ed7313d4c498303e53.png";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const counter = (arr) => arr.length;
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (counter);
 
 /***/ }),
 /* 12 */

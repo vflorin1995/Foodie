@@ -1,5 +1,4 @@
 import './style.css';
-import picture from './food.png';
 import counter from './Modules/counter.js';
 import popupWindow from './Modules/commPopup.js';
 
@@ -43,7 +42,7 @@ fetch(url)
 
       const image = document.createElement('img');
       image.classList = 'picture';
-      image.src = picture;
+      image.src = item.strMealThumb;
 
       const title = document.createElement('div');
       title.innerText = item.strMeal;
