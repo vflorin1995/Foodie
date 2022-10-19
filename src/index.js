@@ -1,5 +1,6 @@
 import './style.css';
 import picture from './food.png';
+import popupWindow from './Modules/commPopup.js';
 
 const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=e';
 const url2 = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/wIvcfoeCMowsKdAOdXJy/likes/';
@@ -57,6 +58,8 @@ fetch(url)
 
       const commentBtn = document.createElement('button');
       commentBtn.innerText = 'Comment';
+      commentBtn.classList = 'commButton';
+      commentBtn.id = item.idMeal;
 
       const reservationBtn = document.createElement('button');
       reservationBtn.innerText = 'Reservation';
@@ -64,6 +67,14 @@ fetch(url)
       container.append(image, box, id, commentBtn, reservationBtn);
       section.append(container);
     });
+
+    const comButton = Array.from(document.querySelectorAll('.commButton'));
+    comButton.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        popupWindow(btn.id);
+      });
+    });
+
     const likeBtn = Array.from(document.querySelectorAll('.likeButton'));
     likeBtn.forEach((item) => {
       item.addEventListener('click', () => {

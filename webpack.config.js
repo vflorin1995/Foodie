@@ -9,6 +9,10 @@ module.exports = {
       template: './src/index.html',
     }),
   ],
+  experiments: {
+    asyncWebAssembly: true,
+    topLevelAwait: true,
+  },
   devServer: {
     static: './dist',
   },
@@ -32,4 +36,5 @@ module.exports = {
   optimization: {
     runtimeChunk: 'single',
   },
+
 };
