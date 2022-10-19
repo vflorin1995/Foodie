@@ -82,6 +82,29 @@
   right: 10%;
 }
 
+.add-comm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-comm > input {
+  padding: 10px;
+}
+
+.comment-count {
+  text-align: center;
+}
+
+.add-comm > form {
+  text-align: center;
+}
+
+.heading-addcomment {
+  text-align: center;
+}
+
 /* Desktop width > 768px */
 @media (min-width: 768px) {
   .meal-image > img {
