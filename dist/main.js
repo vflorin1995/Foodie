@@ -679,23 +679,18 @@ const getData = async (IdMeal) => {
         }
       });
 
-      const commForm = document.getElementById('comm-form');
       const commSubmitBtn = document.getElementById('comm-submit');
-      const userName = commForm.elements['userName'];
-      const comment = commForm.elements['comment'];
-      const userNameValue = userName.value;
-      const commentValue = comment.value;
-      const itemId =  IdMeal;
+      const userName = document.getElementById('userName');
+      const comment = document.getElementById('comment');
+      const itemId = IdMeal;
       commSubmitBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        if (!(userName.value === '' &&  comment.value === '')) {
-        (0,_postComment_js__WEBPACK_IMPORTED_MODULE_1__["default"])(itemId, userName.value, comment.value);
-        userName.value = comment.value = '';
+        if (!(userName.value === '' && comment.value === '')) {
+          (0,_postComment_js__WEBPACK_IMPORTED_MODULE_1__["default"])(itemId, userName.value, comment.value);
+          userName.value = '';
+          comment.value = '';
         }
       });
-
-
-
     })
     .catch((error) => {
       console.warn(`warning error:${error}`);
@@ -792,8 +787,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/wIvcfoeCMowsKdAOdXJy/comments';
 const PostCommentData = async (id, name, comm) => {
-  const body = JSON.stringify({ item_id: id, username: name, comment : comm });
-  const response = await fetch(url, {method: 'POST', body, headers: {'Content-type': 'application/json; charset=UTF-8'}});
+  const body = JSON.stringify({ item_id: id, username: name, comment: comm });
+  const response = await fetch(url, { method: 'POST', body, headers: { 'Content-type': 'application/json; charset=UTF-8' } });
   const data = await response.json();
   const returnResponse = data.result;
   return returnResponse;

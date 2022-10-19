@@ -84,23 +84,18 @@ const getData = async (IdMeal) => {
         }
       });
 
-      const commForm = document.getElementById('comm-form');
       const commSubmitBtn = document.getElementById('comm-submit');
-      const userName = commForm.elements['userName'];
-      const comment = commForm.elements['comment'];
-      const userNameValue = userName.value;
-      const commentValue = comment.value;
-      const itemId =  IdMeal;
+      const userName = document.getElementById('userName');
+      const comment = document.getElementById('comment');
+      const itemId = IdMeal;
       commSubmitBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        if (!(userName.value === '' &&  comment.value === '')) {
-        PostCommentData(itemId, userName.value, comment.value);
-        userName.value = comment.value = '';
+        if (!(userName.value === '' && comment.value === '')) {
+          PostCommentData(itemId, userName.value, comment.value);
+          userName.value = '';
+          comment.value = '';
         }
       });
-
-
-
     })
     .catch((error) => {
       console.warn(`warning error:${error}`);
