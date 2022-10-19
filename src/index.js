@@ -1,5 +1,4 @@
 import './style.css';
-import popupWindowStyles from './Modules/commPopup.css';
 import picture from './food.png';
 import popupWindow from './Modules/commPopup.js';
 const overlay = document.getElementById('overlay');
@@ -11,6 +10,7 @@ fetch(url)
   .then((response) => response.json())
   .then((data) => {
     data = data.meals;
+    console.log(data);
     data.forEach((item) => {
       const container = document.createElement('div');
       container.classList = 'container';
@@ -36,5 +36,12 @@ fetch(url)
     });
   });
 
-
-
+  // Calling Comment Popup here
+  setTimeout(() => {
+    const comButton = Array.from(document.querySelectorAll('.commButton'));
+    comButton.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        popupWindow(btn.id);
+      });
+  });
+  }, 5000);

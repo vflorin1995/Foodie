@@ -7,6 +7,7 @@
   background-color: #fffdfd;
   background-color: rgba(255, 255, 255, 0.807);
   z-index: 100000;
+  display: none;
 }
 
 .popup-body {

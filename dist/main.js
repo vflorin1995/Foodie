@@ -5,24 +5,12 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _Modules_commPopup_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
-/* harmony import */ var _food_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(13);
-/* harmony import */ var _Modules_commPopup_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(14);
-
+/* harmony import */ var _food_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
+/* harmony import */ var _Modules_commPopup_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12);
 
 
 
 const overlay = document.getElementById('overlay');
-
-setTimeout(() => {
-  const commButton = Array.from(document.getElementsByClassName('commButton'));
-  commButton.forEach ( (btn) => {
-    btn.addEventListener('click', (event) => {
-      event.preventDefault();
-      (0,_Modules_commPopup_js__WEBPACK_IMPORTED_MODULE_3__["default"])(btn.id);
-    });
-  });
-}, 2000);
 
 const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=e';
 const section = document.querySelector('.items');
@@ -31,13 +19,14 @@ fetch(url)
   .then((response) => response.json())
   .then((data) => {
     data = data.meals;
+    console.log(data);
     data.forEach((item) => {
       const container = document.createElement('div');
       container.classList = 'container';
 
       const image = document.createElement('img');
       image.classList = 'picture';
-      image.src = _food_png__WEBPACK_IMPORTED_MODULE_2__;
+      image.src = _food_png__WEBPACK_IMPORTED_MODULE_1__;
 
       const title = document.createElement('div');
       title.innerText = item.strMeal;
@@ -56,8 +45,15 @@ fetch(url)
     });
   });
 
-
-
+  // Calling Comment Popup here
+  setTimeout(() => {
+    const comButton = Array.from(document.querySelectorAll('.commButton'));
+    comButton.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        (0,_Modules_commPopup_js__WEBPACK_IMPORTED_MODULE_2__["default"])(btn.id);
+      });
+  });
+  }, 5000);
 
 
 /***/ }),
@@ -409,7 +405,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  max-width: 1200px;\r\n  margin: 0 auto;\r\n}\r\n\r\n.flex {\r\n  display: flex;\r\n}\r\n\r\nul {\r\n  padding: 0;\r\n  margin-bottom: 50px;\r\n}\r\n\r\nul > * {\r\n  margin: 0;\r\n  padding: 0;\r\n  cursor: pointer;\r\n  list-style: none;\r\n}\r\n\r\n.flex-justify {\r\n  justify-content: space-around;\r\n}\r\n\r\nnav {\r\n  font-size: 24px;\r\n}\r\n\r\nfooter {\r\n  border: 2px solid black;\r\n  text-align: center;\r\n  max-width: 1200px;\r\n  margin: 24px;\r\n  padding: 6px 16px;\r\n  line-height: 1.5;\r\n}\r\n\r\n.items {\r\n  margin: 24px;\r\n  display: grid;\r\n  grid-template-columns: 1fr;\r\n}\r\n\r\n.picture {\r\n  max-width: 80vw;\r\n}\r\n\r\n.container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  margin-top: 36px;\r\n}\r\n\r\n.title {\r\n  font-size: 24px;\r\n  padding: 12px;\r\n}\r\n\r\nbutton {\r\n  padding: 6px;\r\n  margin: 6px;\r\n}\r\n\r\n#overlay {\r\n  display: none;\r\n}\r\n\r\n@media only screen and (min-width: 768px) {\r\n  .items {\r\n    grid-template-columns: 1fr 1fr 1fr;\r\n    gap: 20px;\r\n  }\r\n\r\n  .picture {\r\n    width: 25vw;\r\n  }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  max-width: 1200px;\r\n  margin: 0 auto;\r\n}\r\n\r\n.flex {\r\n  display: flex;\r\n}\r\n\r\nul {\r\n  padding: 0;\r\n  margin-bottom: 50px;\r\n}\r\n\r\nul > * {\r\n  margin: 0;\r\n  padding: 0;\r\n  cursor: pointer;\r\n  list-style: none;\r\n}\r\n\r\n.flex-justify {\r\n  justify-content: space-around;\r\n}\r\n\r\nnav {\r\n  font-size: 24px;\r\n}\r\n\r\nfooter {\r\n  border: 2px solid black;\r\n  text-align: center;\r\n  max-width: 1200px;\r\n  margin: 24px;\r\n  padding: 6px 16px;\r\n  line-height: 1.5;\r\n}\r\n\r\n.items {\r\n  margin: 24px;\r\n  display: grid;\r\n  grid-template-columns: 1fr;\r\n}\r\n\r\n.picture {\r\n  max-width: 80vw;\r\n}\r\n\r\n.container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  margin-top: 36px;\r\n}\r\n\r\n.title {\r\n  font-size: 24px;\r\n  padding: 12px;\r\n}\r\n\r\nbutton {\r\n  padding: 6px;\r\n  margin: 6px;\r\n}\r\n\r\n@media only screen and (min-width: 768px) {\r\n  .items {\r\n    grid-template-columns: 1fr 1fr 1fr;\r\n    gap: 20px;\r\n  }\r\n\r\n  .picture {\r\n    width: 25vw;\r\n  }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -533,103 +529,21 @@ module.exports = function (cssWithMappingToString) {
 
 /***/ }),
 /* 11 */
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_commPopup_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(12);
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-
-var options = {};
-
-options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
-options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
-
-      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
-    
-options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
-options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
-
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_commPopup_css__WEBPACK_IMPORTED_MODULE_6__["default"], options);
-
-
-
-
-       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_commPopup_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_commPopup_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_commPopup_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
-
-
-/***/ }),
-/* 12 */
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-// Imports
-
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, "#overlay {\r\n  position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background-color: #fffdfd;\r\n  background-color: rgba(255, 255, 255, 0.807);\r\n  z-index: 100000;\r\n}\r\n\r\n.popup-body {\r\n  display: flex;\r\n  align-items: center;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n}\r\n\r\n#popup {\r\n  border: 2px solid black;\r\n  padding: 0 24px 24px;\r\n  width: 70%;\r\n  margin: 0 auto;\r\n  height: 80%;\r\n  background-color: rgb(0, 0, 0);\r\n  background-color: rgba(255, 255, 255, 0.16);\r\n  z-index: 100000;\r\n  position: fixed;\r\n  top: 10px;\r\n  left: 20px;\r\n  right: 20px;\r\n  bottom: 20px;\r\n  overflow-y: scroll;\r\n}\r\n\r\n.popup-holder {\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.meal-image {\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n\r\n.meal-image > img {\r\n  width: 42vw;\r\n  height: 32vw;\r\n}\r\n\r\n.meal-name {\r\n  text-align: center;\r\n  font-size: 8vw;\r\n}\r\n\r\n.meal-desc {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: flex-start;\r\n}\r\n\r\n.meal-desc-ul > li {\r\n  padding: 10px;\r\n  font-size: 18px;\r\n  flex-wrap: wrap;\r\n}\r\n\r\n.meal-desc-right > ul {\r\n  margin-top: 0;\r\n}\r\n\r\n.meal-desc-left > ul {\r\n  margin-bottom: 0;\r\n}\r\n\r\n.close-popup {\r\n  color: rgb(5, 5, 5);\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: flex-end;\r\n  right: 10%;\r\n}\r\n\r\n/* Desktop width > 768px */\r\n@media (min-width: 768px) {\r\n  .meal-image > img {\r\n    width: 36vw;\r\n    height: 28vw;\r\n  }\r\n\r\n  .meal-name {\r\n    text-align: center;\r\n    font-size: 2.5vw;\r\n  }\r\n\r\n  .meal-desc {\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n  }\r\n\r\n  .meal-desc-ul > li {\r\n    padding: 10px;\r\n    font-size: 18px;\r\n    word-wrap: break-word;\r\n  }\r\n\r\n  .meal-desc-left > ul {\r\n    margin-top: 0;\r\n  }\r\n\r\n  .meal-desc-right > ul {\r\n    margin-top: 0;\r\n  }\r\n\r\n\r\n}\r\n", ""]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-/* 13 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__.p + "93ed7313d4c498303e53.png";
 
 /***/ }),
-/* 14 */
+/* 12 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _commPopup_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(11);
+/* harmony import */ var _commPopup_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(13);
 
 const overlay = document.getElementById('overlay');
-// const section = document.querySelector('.items');
-// const getData = async (IdMeal) => {
-//   console.log('getFunct' + IdMeal);
-//   const response = await fetch('www.themealdb.com/api/json/v1/1/lookup.php?i=' + IdMeal);
-//   const resultData = await response.json();
-//   console.log('getFunctAfter ' + resultData);
-//   return resultData.result;
-// };
-
-
 
 const getData = async (IdMeal) => {
   const url = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + IdMeal;
@@ -689,6 +603,76 @@ closeButton.addEventListener('click', (e) => {
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PopupWindowOn);
 
+/***/ }),
+/* 13 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_commPopup_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(14);
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+
+      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+    
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_commPopup_css__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_commPopup_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_commPopup_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_commPopup_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ }),
+/* 14 */
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "#overlay {\r\n  position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background-color: #fffdfd;\r\n  background-color: rgba(255, 255, 255, 0.807);\r\n  z-index: 100000;\r\n  display: none;\r\n}\r\n\r\n.popup-body {\r\n  display: flex;\r\n  align-items: center;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n}\r\n\r\n#popup {\r\n  border: 2px solid black;\r\n  padding: 0 24px 24px;\r\n  width: 70%;\r\n  margin: 0 auto;\r\n  height: 80%;\r\n  background-color: rgb(0, 0, 0);\r\n  background-color: rgba(255, 255, 255, 0.16);\r\n  z-index: 100000;\r\n  position: fixed;\r\n  top: 10px;\r\n  left: 20px;\r\n  right: 20px;\r\n  bottom: 20px;\r\n  overflow-y: scroll;\r\n}\r\n\r\n.popup-holder {\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.meal-image {\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n\r\n.meal-image > img {\r\n  width: 42vw;\r\n  height: 32vw;\r\n}\r\n\r\n.meal-name {\r\n  text-align: center;\r\n  font-size: 8vw;\r\n}\r\n\r\n.meal-desc {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: flex-start;\r\n}\r\n\r\n.meal-desc-ul > li {\r\n  padding: 10px;\r\n  font-size: 18px;\r\n  flex-wrap: wrap;\r\n}\r\n\r\n.meal-desc-right > ul {\r\n  margin-top: 0;\r\n}\r\n\r\n.meal-desc-left > ul {\r\n  margin-bottom: 0;\r\n}\r\n\r\n.close-popup {\r\n  color: rgb(5, 5, 5);\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: flex-end;\r\n  right: 10%;\r\n}\r\n\r\n/* Desktop width > 768px */\r\n@media (min-width: 768px) {\r\n  .meal-image > img {\r\n    width: 36vw;\r\n    height: 28vw;\r\n  }\r\n\r\n  .meal-name {\r\n    text-align: center;\r\n    font-size: 2.5vw;\r\n  }\r\n\r\n  .meal-desc {\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n  }\r\n\r\n  .meal-desc-ul > li {\r\n    padding: 10px;\r\n    font-size: 18px;\r\n    word-wrap: break-word;\r\n  }\r\n\r\n  .meal-desc-left > ul {\r\n    margin-top: 0;\r\n  }\r\n\r\n  .meal-desc-right > ul {\r\n    margin-top: 0;\r\n  }\r\n\r\n\r\n}\r\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
 /***/ })
