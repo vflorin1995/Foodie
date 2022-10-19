@@ -1,4 +1,5 @@
 import './commPopup.css';
+import PostCommentData from './postComment.js';
 
 const overlay = document.getElementById('overlay');
 const getData = async (IdMeal) => {
@@ -82,6 +83,24 @@ const getData = async (IdMeal) => {
           overlay.style.display = 'none';
         }
       });
+
+      const commForm = document.getElementById('comm-form');
+      const commSubmitBtn = document.getElementById('comm-submit');
+      const userName = commForm.elements['userName'];
+      const comment = commForm.elements['comment'];
+      const userNameValue = userName.value;
+      const commentValue = comment.value;
+      const itemId =  IdMeal;
+      commSubmitBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (!(userName.value === '' &&  comment.value === '')) {
+        PostCommentData(itemId, userName.value, comment.value);
+        userName.value = comment.value = '';
+        }
+      });
+
+
+
     })
     .catch((error) => {
       console.warn(`warning error:${error}`);

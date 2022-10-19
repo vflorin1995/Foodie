@@ -592,6 +592,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _commPopup_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(13);
+/* harmony import */ var _postComment_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(15);
+
 
 
 const overlay = document.getElementById('overlay');
@@ -676,6 +678,24 @@ const getData = async (IdMeal) => {
           overlay.style.display = 'none';
         }
       });
+
+      const commForm = document.getElementById('comm-form');
+      const commSubmitBtn = document.getElementById('comm-submit');
+      const userName = commForm.elements['userName'];
+      const comment = commForm.elements['comment'];
+      const userNameValue = userName.value;
+      const commentValue = comment.value;
+      const itemId =  IdMeal;
+      commSubmitBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (!(userName.value === '' &&  comment.value === '')) {
+        (0,_postComment_js__WEBPACK_IMPORTED_MODULE_1__["default"])(itemId, userName.value, comment.value);
+        userName.value = comment.value = '';
+        }
+      });
+
+
+
     })
     .catch((error) => {
       console.warn(`warning error:${error}`);
@@ -761,6 +781,24 @@ ___CSS_LOADER_EXPORT___.push([module.id, "#overlay {\r\n  position: fixed;\r\n  
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
+
+/***/ }),
+/* 15 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/wIvcfoeCMowsKdAOdXJy/comments';
+const PostCommentData = async (id, name, comm) => {
+  const body = JSON.stringify({ item_id: id, username: name, comment : comm });
+  const response = await fetch(url, {method: 'POST', body, headers: {'Content-type': 'application/json; charset=UTF-8'}});
+  const data = await response.json();
+  const returnResponse = data.result;
+  return returnResponse;
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PostCommentData);
 
 /***/ })
 ],
