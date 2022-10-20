@@ -671,7 +671,7 @@ const getData = async (IdMeal) => {
         commentCount.classList = 'comment-count';
         displayComments.append(commentCount);
         const container = document.createElement('div');
-        container.classList = 'container';
+        container.classList = 'com-container';
         commData.forEach((item) => {
           const commentDetail = document.createElement('p');
           commentDetail.innerText = `${item.creation_date} ${item.username}: ${item.comment}`;
@@ -693,10 +693,22 @@ const getData = async (IdMeal) => {
       const userName = document.getElementById('userName');
       const comment = document.getElementById('comment');
       const itemId = IdMeal;
+      const comcontainer = document.querySelector('.com-container');
       commSubmitBtn.addEventListener('click', (e) => {
         e.preventDefault();
         if (!(userName.value === '' && comment.value === '')) {
           (0,_postComment_js__WEBPACK_IMPORTED_MODULE_1__["default"])(itemId, userName.value, comment.value);
+          const commName = document.createElement('p');
+
+          let today = new Date();
+          const dd = String(today.getDate()).padStart(2, '0');
+          const mm = String(today.getMonth() + 1).padStart(2, '0');
+          const yyyy = today.getFullYear();
+          today = `${yyyy}-${mm}-${dd}`;
+          commCounts += 1;
+          commentCount.innerText = `Comments (${commCounts})`;
+          commName.innerText = `${today} ${userName.value}: ${comment.value}`;
+          comcontainer.append(commName);
           userName.value = '';
           comment.value = '';
         }
