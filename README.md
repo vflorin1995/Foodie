@@ -4,7 +4,7 @@ This is JavaScript capstone project is about building your own web application b
 
 ## Website Live Demo Link
 
-- [API-based webapp](https://https://vflorin1995.github.io/API-based-webapp/dist)
+- [API-based webapp](https://vflorin1995.github.io/API-based-webapp/dist/)
 
 ## Built With
 
