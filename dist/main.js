@@ -5,8 +5,8 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _Modules_counter_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
-/* harmony import */ var _Modules_commPopup_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12);
+/* harmony import */ var _Modules_counter_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(13);
+/* harmony import */ var _Modules_commPopup_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(14);
 
 
 
@@ -454,12 +454,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(11);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
 // Imports
 
 
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(12), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  max-width: 1200px;\r\n  margin: 0 auto;\r\n}\r\n\r\n.flex {\r\n  display: flex;\r\n}\r\n\r\nul {\r\n  padding: 0;\r\n  margin-bottom: 50px;\r\n}\r\n\r\nul > * {\r\n  margin: 0;\r\n  padding: 0;\r\n  cursor: pointer;\r\n  list-style: none;\r\n}\r\n\r\n.flex-justify {\r\n  justify-content: space-around;\r\n}\r\n\r\nnav {\r\n  font-size: 24px;\r\n}\r\n\r\nfooter {\r\n  border: 2px solid black;\r\n  text-align: center;\r\n  max-width: 1200px;\r\n  margin: 24px;\r\n  padding: 6px 16px;\r\n  line-height: 1.5;\r\n}\r\n\r\n.items {\r\n  margin: 24px;\r\n  display: grid;\r\n  grid-template-columns: 1fr;\r\n}\r\n\r\n.picture {\r\n  max-width: 80vw;\r\n}\r\n\r\n.container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  margin-top: 36px;\r\n}\r\n\r\n.title {\r\n  font-size: 24px;\r\n  padding: 12px;\r\n}\r\n\r\nbutton {\r\n  padding: 6px;\r\n  margin: 6px;\r\n}\r\n\r\n.displayNone {\r\n  display: none;\r\n}\r\n\r\n.likes {\r\n  font-size: 16px;\r\n  color: gray;\r\n}\r\n\r\n.box {\r\n  align-items: center;\r\n}\r\n\r\n@media only screen and (min-width: 768px) {\r\n  .items {\r\n    grid-template-columns: 1fr 1fr 1fr;\r\n    gap: 20px;\r\n  }\r\n\r\n  .picture {\r\n    width: 25vw;\r\n  }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  max-width: 1200px;\n  margin: 0 auto;\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n}\n\n.flex {\n  display: flex;\n}\n\nul {\n  padding: 0;\n  margin-bottom: 50px;\n}\n\nul > * {\n  margin: 0;\n  padding: 0;\n  cursor: pointer;\n  list-style: none;\n}\n\n.flex-justify {\n  justify-content: space-around;\n}\n\nnav {\n  font-size: 24px;\n}\n\nfooter {\n  border: 2px solid black;\n  border-radius: 10px;\n  text-align: center;\n  max-width: 1200px;\n  margin: 24px;\n  padding: 6px 16px;\n  line-height: 1.5;\n}\n\n.items {\n  margin: 24px;\n  display: grid;\n  grid-template-columns: 1fr;\n}\n\n.picture {\n  max-width: 80vw;\n}\n\n.container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding-top: 24px;\n  padding-bottom: 16px;\n  border-radius: 10px;\n  margin-top: 36px;\n}\n\n.container:hover {\n  box-shadow: 5px 5px 10px black;\n  scale: 1.05;\n}\n\n.title {\n  font-size: 24px;\n  padding: 12px;\n}\n\nbutton {\n  padding: 10px;\n  margin: 6px;\n  border-radius: 10px;\n  background-color: bisque;\n}\n\n.displayNone {\n  display: none;\n}\n\n.likes {\n  font-size: 16px;\n  color: darkslategray;\n}\n\n.box {\n  align-items: center;\n}\n\n.picture {\n  border-radius: 10px;\n}\n\n@media only screen and (min-width: 768px) {\n  .items {\n    grid-template-columns: 1fr 1fr 1fr;\n    gap: 20px;\n  }\n\n  .picture {\n    width: 25vw;\n  }\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -583,6 +588,46 @@ module.exports = function (cssWithMappingToString) {
 
 /***/ }),
 /* 11 */
+/***/ ((module) => {
+
+
+
+module.exports = function (url, options) {
+  if (!options) {
+    options = {};
+  }
+
+  if (!url) {
+    return url;
+  }
+
+  url = String(url.__esModule ? url.default : url); // If url is already wrapped in quotes, remove them
+
+  if (/^['"].*['"]$/.test(url)) {
+    url = url.slice(1, -1);
+  }
+
+  if (options.hash) {
+    url += options.hash;
+  } // Should url be wrapped?
+  // See https://drafts.csswg.org/css-values-3/#urls
+
+
+  if (/["'() \t\n]|(%20)/.test(url) || options.needQuotes) {
+    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, "\\n"), "\"");
+  }
+
+  return url;
+};
+
+/***/ }),
+/* 12 */
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "652d5f86b4bb9fd1d085.jpg";
+
+/***/ }),
+/* 13 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -594,15 +639,15 @@ const counter = (arr) => arr.length;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (counter);
 
 /***/ }),
-/* 12 */
+/* 14 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _commPopup_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(13);
-/* harmony import */ var _postComment_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(15);
+/* harmony import */ var _commPopup_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15);
+/* harmony import */ var _postComment_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(17);
 
 
 
@@ -647,8 +692,8 @@ const getData = async (IdMeal) => {
             <div class="add-comm">
             <h3 class="heading-addcomment">Add a comment </h3>
             <form id="comm-form">
-            <input type="text" name="userName" id="userName" placeholder="Your name">
-            <input type="text" name="comment " id="comment" placeholder="Your insights">
+            <input type="text" name="userName" id="userName" required placeholder="Your name">
+            <input type="text" name="comment " id="comment" required placeholder="Your insights">
             <p id="status"></p>
              <button id="comm-submit" type="submit">Comment</button>
           </form>
@@ -671,7 +716,7 @@ const getData = async (IdMeal) => {
         commentCount.classList = 'comment-count';
         displayComments.append(commentCount);
         const container = document.createElement('div');
-        container.classList = 'container';
+        container.classList = 'com-container';
         commData.forEach((item) => {
           const commentDetail = document.createElement('p');
           commentDetail.innerText = `${item.creation_date} ${item.username}: ${item.comment}`;
@@ -693,10 +738,22 @@ const getData = async (IdMeal) => {
       const userName = document.getElementById('userName');
       const comment = document.getElementById('comment');
       const itemId = IdMeal;
+      const comcontainer = document.querySelector('.com-container');
       commSubmitBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        if (!(userName.value === '' && comment.value === '')) {
+        if (!(userName.value === '' || comment.value === '')) {
           (0,_postComment_js__WEBPACK_IMPORTED_MODULE_1__["default"])(itemId, userName.value, comment.value);
+          const commName = document.createElement('p');
+
+          let today = new Date();
+          const dd = String(today.getDate()).padStart(2, '0');
+          const mm = String(today.getMonth() + 1).padStart(2, '0');
+          const yyyy = today.getFullYear();
+          today = `${yyyy}-${mm}-${dd}`;
+          commCounts += 1;
+          commentCount.innerText = `Comments (${commCounts})`;
+          commName.innerText = `${today} ${userName.value}: ${comment.value}`;
+          comcontainer.append(commName);
           userName.value = '';
           comment.value = '';
         }
@@ -716,7 +773,7 @@ const PopupWindowOn = (id) => {
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PopupWindowOn);
 
 /***/ }),
-/* 13 */
+/* 15 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -735,7 +792,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_commPopup_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(14);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_commPopup_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(16);
 
       
       
@@ -766,7 +823,7 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /***/ }),
-/* 14 */
+/* 16 */
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -782,13 +839,13 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#overlay {\r\n  position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background-color: #fffdfd;\r\n  background-color: rgba(255, 255, 255, 0.807);\r\n  z-index: 100000;\r\n  display: none;\r\n}\r\n\r\n.popup-body {\r\n  display: flex;\r\n  align-items: center;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n}\r\n\r\n#popup {\r\n  border: 2px solid black;\r\n  padding: 0 24px 24px;\r\n  width: 70%;\r\n  margin: 0 auto;\r\n  height: 80%;\r\n  background-color: rgb(0, 0, 0);\r\n  background-color: rgba(255, 255, 255, 0.16);\r\n  z-index: 100000;\r\n  position: fixed;\r\n  top: 10px;\r\n  left: 20px;\r\n  right: 20px;\r\n  bottom: 20px;\r\n  overflow-y: scroll;\r\n}\r\n\r\n.popup-holder {\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.meal-image {\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n\r\n.meal-image > img {\r\n  width: 42vw;\r\n  height: 32vw;\r\n}\r\n\r\n.meal-name {\r\n  text-align: center;\r\n  font-size: 8vw;\r\n}\r\n\r\n.meal-desc {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: flex-start;\r\n}\r\n\r\n.meal-desc-ul > li {\r\n  padding: 10px;\r\n  font-size: 18px;\r\n  flex-wrap: wrap;\r\n}\r\n\r\n.meal-desc-right > ul {\r\n  margin-top: 0;\r\n}\r\n\r\n.meal-desc-left > ul {\r\n  margin-bottom: 0;\r\n}\r\n\r\n.close-popup {\r\n  color: rgb(5, 5, 5);\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: flex-end;\r\n  right: 10%;\r\n}\r\n\r\n.add-comm {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.add-comm > input {\r\n  padding: 10px;\r\n}\r\n\r\n.comment-count {\r\n  text-align: center;\r\n}\r\n\r\n.add-comm > form {\r\n  text-align: center;\r\n}\r\n\r\n.heading-addcomment {\r\n  text-align: center;\r\n}\r\n\r\n/* Desktop width > 768px */\r\n@media (min-width: 768px) {\r\n  .meal-image > img {\r\n    width: 36vw;\r\n    height: 28vw;\r\n  }\r\n\r\n  .meal-name {\r\n    text-align: center;\r\n    font-size: 2.5vw;\r\n  }\r\n\r\n  .meal-desc {\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n  }\r\n\r\n  .meal-desc-ul > li {\r\n    padding: 10px;\r\n    font-size: 18px;\r\n    word-wrap: break-word;\r\n  }\r\n\r\n  .meal-desc-left > ul {\r\n    margin-top: 0;\r\n  }\r\n\r\n  .meal-desc-right > ul {\r\n    margin-top: 0;\r\n  }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "#overlay {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: #fffdfd;\n  background-color: rgba(255, 255, 255, 0.807);\n  z-index: 100000;\n  display: none;\n}\n\n.popup-body {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  justify-content: center;\n}\n\n#popup {\n  border: 2px solid black;\n  border-radius: 20px;\n  padding: 0 24px 24px;\n  width: 70%;\n  margin: 0 auto;\n  height: 80%;\n  background-color: rgb(0, 0, 0);\n  background-color: rgba(255, 255, 255, 0.16);\n  z-index: 100000;\n  position: fixed;\n  top: 10px;\n  left: 20px;\n  right: 20px;\n  bottom: 20px;\n  overflow-y: scroll;\n}\n\n.popup-holder {\n  display: flex;\n  flex-direction: column;\n}\n\n.meal-image {\n  display: flex;\n  justify-content: center;\n}\n\n.meal-image > img {\n  width: 84vw;\n  height: 64vw;\n  border-radius: 10px;\n}\n\n.meal-name {\n  text-align: center;\n  font-size: 8vw;\n}\n\n.meal-desc {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n}\n\n.meal-desc-ul > li {\n  padding: 10px;\n  font-size: 18px;\n  flex-wrap: wrap;\n}\n\n.meal-desc-right > ul {\n  margin-top: 0;\n}\n\n.meal-desc-left > ul {\n  margin-bottom: 0;\n}\n\n.close-popup {\n  color: rgb(5, 5, 5);\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n  margin: 8px;\n}\n\n.add-comm {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n\n.add-comm > input {\n  padding: 10px;\n}\n\n.comment-count {\n  text-align: center;\n}\n\n.add-comm > form {\n  text-align: center;\n}\n\n.heading-addcomment {\n  text-align: center;\n}\n\n/* Desktop width > 768px */\n@media (min-width: 768px) {\n  .meal-image > img {\n    width: 36vw;\n    height: 28vw;\n  }\n\n  .meal-name {\n    text-align: center;\n    font-size: 2.5vw;\n  }\n\n  .meal-desc {\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n  }\n\n  .meal-desc-ul > li {\n    padding: 10px;\n    font-size: 18px;\n    word-wrap: break-word;\n  }\n\n  .meal-desc-left > ul {\n    margin-top: 0;\n  }\n\n  .meal-desc-right > ul {\n    margin-top: 0;\n  }\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
 /***/ }),
-/* 15 */
+/* 17 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);

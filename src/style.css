@@ -1,6 +1,7 @@
 body {
   max-width: 1200px;
   margin: 0 auto;
+  background-image: url(./background.jpg);
 }
 
 .flex {
@@ -29,6 +30,7 @@ nav {
 
 footer {
   border: 2px solid black;
+  border-radius: 10px;
   text-align: center;
   max-width: 1200px;
   margin: 24px;
@@ -50,7 +52,15 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 24px;
+  padding-bottom: 16px;
+  border-radius: 10px;
   margin-top: 36px;
+}
+
+.container:hover {
+  box-shadow: 5px 5px 10px black;
+  scale: 1.05;
 }
 
 .title {
@@ -59,8 +69,10 @@ footer {
 }
 
 button {
-  padding: 6px;
+  padding: 10px;
   margin: 6px;
+  border-radius: 10px;
+  background-color: bisque;
 }
 
 .displayNone {
@@ -69,11 +81,15 @@ button {
 
 .likes {
   font-size: 16px;
-  color: gray;
+  color: darkslategray;
 }
 
 .box {
   align-items: center;
+}
+
+.picture {
+  border-radius: 10px;
 }
 
 @media only screen and (min-width: 768px) {

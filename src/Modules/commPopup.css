@@ -19,6 +19,7 @@
 
 #popup {
   border: 2px solid black;
+  border-radius: 20px;
   padding: 0 24px 24px;
   width: 70%;
   margin: 0 auto;
@@ -45,8 +46,9 @@
 }
 
 .meal-image > img {
-  width: 42vw;
-  height: 32vw;
+  width: 84vw;
+  height: 64vw;
+  border-radius: 10px;
 }
 
 .meal-name {
@@ -79,7 +81,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  right: 10%;
+  margin: 8px;
 }
 
 .add-comm {
