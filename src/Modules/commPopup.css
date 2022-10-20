@@ -19,6 +19,7 @@
 
 #popup {
   border: 2px solid black;
+  border-radius: 20px;
   padding: 0 24px 24px;
   width: 70%;
   margin: 0 auto;
@@ -45,8 +46,9 @@
 }
 
 .meal-image > img {
-  width: 42vw;
-  height: 32vw;
+  width: 84vw;
+  height: 64vw;
+  border-radius: 10px;
 }
 
 .meal-name {
@@ -79,7 +81,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  right: 10%;
+  margin: 8px;
 }
 
 .add-comm {
@@ -97,8 +99,13 @@
   text-align: center;
 }
 
-.add-comm > form {
-  text-align: center;
+.add-comm > form > input {
+  margin: 10px;
+  height: 26px;
+}
+
+.add-comm > form > textarea {
+  margin: 10px;
 }
 
 .heading-addcomment {
@@ -135,5 +142,30 @@
 
   .meal-desc-right > ul {
     margin-top: 0;
+  }
+
+  #display-comm {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .add-comm > form {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .add-comm > form > input {
+    border: 2px solid black;
+  }
+
+  #comm-submit {
+    align-self: flex-start;
+    text-align: start;
+  }
+
+  textarea {
+    border: 2px solid black;
   }
 }

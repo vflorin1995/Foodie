@@ -42,8 +42,8 @@ const getData = async (IdMeal) => {
             <div class="add-comm">
             <h3 class="heading-addcomment">Add a comment </h3>
             <form id="comm-form">
-            <input type="text" name="userName" id="userName" placeholder="Your name">
-            <input type="text" name="comment " id="comment" placeholder="Your insights">
+            <input type="text" name="userName" id="userName" size="30" required placeholder="Your name">
+            <textarea name="comment " id="comment" rows="6" cols="40" required placeholder="Your insights"></textarea>
             <p id="status"></p>
              <button id="comm-submit" type="submit">Comment</button>
           </form>
@@ -91,7 +91,7 @@ const getData = async (IdMeal) => {
       const comcontainer = document.querySelector('.com-container');
       commSubmitBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        if (!(userName.value === '' && comment.value === '')) {
+        if (!(userName.value === '' || comment.value === '')) {
           PostCommentData(itemId, userName.value, comment.value);
           const commName = document.createElement('p');
 
