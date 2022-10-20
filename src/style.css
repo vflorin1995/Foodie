@@ -46,6 +46,7 @@ footer {
 
 .picture {
   max-width: 80vw;
+  border-radius: 10px;
 }
 
 .container {
@@ -86,10 +87,6 @@ button {
 
 .box {
   align-items: center;
-}
-
-.picture {
-  border-radius: 10px;
 }
 
 @media only screen and (min-width: 768px) {
