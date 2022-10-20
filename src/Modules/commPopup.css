@@ -99,8 +99,13 @@
   text-align: center;
 }
 
-.add-comm > form {
-  text-align: center;
+.add-comm > form > input {
+  margin: 10px;
+  height: 26px;
+}
+
+.add-comm > form > textarea {
+  margin: 10px;
 }
 
 .heading-addcomment {
@@ -137,5 +142,30 @@
 
   .meal-desc-right > ul {
     margin-top: 0;
+  }
+
+  #display-comm {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .add-comm > form {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .add-comm > form > input {
+    border: 2px solid black;
+  }
+
+  #comm-submit {
+    align-self: flex-start;
+    text-align: start;
+  }
+
+  textarea {
+    border: 2px solid black;
   }
 }
