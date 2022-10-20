@@ -97,5 +97,6 @@ button {
 
   .picture {
     width: 25vw;
+    max-width: 370px;
   }
 }
